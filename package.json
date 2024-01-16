@@ -1,0 +1,12 @@
+{
+  "name": "bm-street-view",
+  "version": "1.0.0",
+  "description": "Das \"360° SchoolView Projekt\" zielt darauf ab, eine interaktive, visuelle Darstellung unserer Schule zu schaffen. Durch die Nutzung von 360°-Fotografie ermöglichen wir es Betrachtern, virtuelle Rundgänge durch verschiedene Bereiche der Schule zu erleben. Dieses Projekt kombiniert technische Innovation mit kreativem Design, um eine einzigartige und immersive Erfahrung zu bieten.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
