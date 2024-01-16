@@ -6,7 +6,22 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "bm",
+    "köln"
+  ],
+  "author": "Thiemo Küpper",
+  "license": "ISC",
+  "dependencies": {
+    "panolens": "^0.10.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TravikSkoot/bm-street-view.git"
+  },
+  "bugs": {
+    "url": "https://github.com/TravikSkoot/bm-street-view/issues"
+  },
+  "homepage": "https://github.com/TravikSkoot/bm-street-view#readme"
 }
