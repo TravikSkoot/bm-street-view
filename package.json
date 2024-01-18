@@ -4,7 +4,7 @@
   "description": "Das \"360° SchoolView Projekt\" zielt darauf ab, eine interaktive, visuelle Darstellung unserer Schule zu schaffen. Durch die Nutzung von 360°-Fotografie ermöglichen wir es Betrachtern, virtuelle Rundgänge durch verschiedene Bereiche der Schule zu erleben. Dieses Projekt kombiniert technische Innovation mit kreativem Design, um eine einzigartige und immersive Erfahrung zu bieten.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \\\"Error: no tests specified\\\" && exit 1"
   },
   "keywords": [
     "bm",
@@ -13,9 +13,9 @@
   "author": "Thiemo Küpper",
   "license": "ISC",
   "dependencies": {
-    "panolens": "^0.10.4"
+    "panolens": "^0.10.4",
+    "three": "^0.105.0"
   },
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TravikSkoot/bm-street-view.git"
