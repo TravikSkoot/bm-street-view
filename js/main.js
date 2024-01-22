@@ -3,48 +3,48 @@ window.addEventListener('load', function () {
     // Erstelle ein Panorama-Objekt
 
     // Aula
-    const aula1 = new PANOLENS.ImagePanorama('assets/images/aula1.JPG');
-    const aula2 = new PANOLENS.ImagePanorama('assets/images/aula2.jpg');
-    const aula3 = new PANOLENS.ImagePanorama('assets/images/aula3.jpg');
-    const aula4 = new PANOLENS.ImagePanorama('assets/images/aula4.jpg');
-    const aula5 = new PANOLENS.ImagePanorama('assets/images/aula5.jpg');
+    const aula1 = new PANOLENS.ImagePanorama('/assets/images/aula1.JPG');
+    const aula2 = new PANOLENS.ImagePanorama('/assets/images/aula2.jpg');
+    const aula3 = new PANOLENS.ImagePanorama('/assets/images/aula3.jpg');
+    const aula4 = new PANOLENS.ImagePanorama('/assets/images/aula4.jpg');
+    const aula5 = new PANOLENS.ImagePanorama('/assets/images/aula5.jpg');
     // Eingang B Gebäude
-    const eingang3 = new PANOLENS.ImagePanorama('assets/images/eingang3.jpg');
-    const eingang2 = new PANOLENS.ImagePanorama('assets/images/eingang2.jpg');
-    const eingang1 = new PANOLENS.ImagePanorama('assets/images/eingang1.jpg');
+    const eingang3 = new PANOLENS.ImagePanorama('/assets/images/eingang3.jpg');
+    const eingang2 = new PANOLENS.ImagePanorama('/assets/images/eingang2.jpg');
+    const eingang1 = new PANOLENS.ImagePanorama('/assets/images/eingang1.jpg');
     // Bibliothek
-    const bibliothek1 = new PANOLENS.ImagePanorama('assets/images/bibliothek1.jpg');
-    const bibliothek2 = new PANOLENS.ImagePanorama('assets/images/bibliothek2.jpg');
-    const bibliothek3 = new PANOLENS.ImagePanorama('assets/images/bibliothek3.jpg');
-    const bibliothek4 = new PANOLENS.ImagePanorama('assets/images/bibliothek4.jpg');
-    const bibliothek5 = new PANOLENS.ImagePanorama('assets/images/bibliothek5.jpg');
+    const bibliothek1 = new PANOLENS.ImagePanorama('/assets/images/bibliothek1.jpg');
+    const bibliothek2 = new PANOLENS.ImagePanorama('/assets/images/bibliothek2.jpg');
+    const bibliothek3 = new PANOLENS.ImagePanorama('/assets/images/bibliothek3.jpg');
+    const bibliothek4 = new PANOLENS.ImagePanorama('/assets/images/bibliothek4.jpg');
+    const bibliothek5 = new PANOLENS.ImagePanorama('/assets/images/bibliothek5.jpg');
     // 1. Etage
-    const flur1_1 = new PANOLENS.ImagePanorama('assets/images/1-flur1.jpg');
-    const flur1_2 = new PANOLENS.ImagePanorama('assets/images/1-flur2.jpg');
-    const flur1_3 = new PANOLENS.ImagePanorama('assets/images/1-flur3.jpg');
-    const flur1_4 = new PANOLENS.ImagePanorama('assets/images/1-flur4.jpg');
-    const flur1_5 = new PANOLENS.ImagePanorama('assets/images/1-flur5.jpg');
-    const flur1_6 = new PANOLENS.ImagePanorama('assets/images/1-flur6.jpg');
+    const flur1_1 = new PANOLENS.ImagePanorama('/assets/images/1-flur1.jpg');
+    const flur1_2 = new PANOLENS.ImagePanorama('/assets/images/1-flur2.jpg');
+    const flur1_3 = new PANOLENS.ImagePanorama('/assets/images/1-flur3.jpg');
+    const flur1_4 = new PANOLENS.ImagePanorama('/assets/images/1-flur4.jpg');
+    const flur1_5 = new PANOLENS.ImagePanorama('/assets/images/1-flur5.jpg');
+    const flur1_6 = new PANOLENS.ImagePanorama('/assets/images/1-flur6.jpg');
     // Räume
-    const computerraum= new PANOLENS.ImagePanorama('assets/images/computerraum.jpg');
-    const fachraum= new PANOLENS.ImagePanorama('assets/images/fachraum.jpg');
-    const greenscreen= new PANOLENS.ImagePanorama('assets/images/greenscreen.jpg');
-    const tonstudio1= new PANOLENS.ImagePanorama('assets/images/tonstudio1.jpg');
-    const tonstudio2= new PANOLENS.ImagePanorama('assets/images/tonstudio2.jpg');
+    const computerraum= new PANOLENS.ImagePanorama('/assets/images/computerraum.jpg');
+    const fachraum= new PANOLENS.ImagePanorama('/assets/images/fachraum.jpg');
+    const greenscreen= new PANOLENS.ImagePanorama('/assets/images/greenscreen.jpg');
+    const tonstudio1= new PANOLENS.ImagePanorama('/assets/images/tonstudio1.jpg');
+    const tonstudio2= new PANOLENS.ImagePanorama('/assets/images/tonstudio2.jpg');
     // 2. Etage
-    const flur2_1 = new PANOLENS.ImagePanorama('assets/images/2-flur1.jpg');
-    const flur2_2 = new PANOLENS.ImagePanorama('assets/images/2-flur2.jpg');
-    const flur2_3 = new PANOLENS.ImagePanorama('assets/images/2-flur3.jpg');
+    const flur2_1 = new PANOLENS.ImagePanorama('/assets/images/2-flur1.jpg');
+    const flur2_2 = new PANOLENS.ImagePanorama('/assets/images/2-flur2.jpg');
+    const flur2_3 = new PANOLENS.ImagePanorama('/assets/images/2-flur3.jpg');
     // Treppenhaus
-    const treppenhaus1 = new PANOLENS.ImagePanorama('assets/images/treppenhaus1.jpg');
-    const treppenhaus2 = new PANOLENS.ImagePanorama('assets/images/treppenhaus2.jpg');
-    const treppenhaus3 = new PANOLENS.ImagePanorama('assets/images/treppenhaus3.jpg');
-    const treppenhaus4 = new PANOLENS.ImagePanorama('assets/images/treppenhaus4.jpg');
-    const treppenhaus5 = new PANOLENS.ImagePanorama('assets/images/treppenhaus5.jpg');
+    const treppenhaus1 = new PANOLENS.ImagePanorama('/assets/images/treppenhaus1.jpg');
+    const treppenhaus2 = new PANOLENS.ImagePanorama('/assets/images/treppenhaus2.jpg');
+    const treppenhaus3 = new PANOLENS.ImagePanorama('/assets/images/treppenhaus3.jpg');
+    const treppenhaus4 = new PANOLENS.ImagePanorama('/assets/images/treppenhaus4.jpg');
+    const treppenhaus5 = new PANOLENS.ImagePanorama('/assets/images/treppenhaus5.jpg');
     // Dach
-    const dach1 = new PANOLENS.ImagePanorama('assets/images/dach1.jpg');
-    const dach2 = new PANOLENS.ImagePanorama('assets/images/dach2.jpg');
-    const dach3 = new PANOLENS.ImagePanorama('assets/images/dach3.jpg');
+    const dach1 = new PANOLENS.ImagePanorama('/assets/images/dach1.jpg');
+    const dach2 = new PANOLENS.ImagePanorama('/assets/images/dach2.jpg');
+    const dach3 = new PANOLENS.ImagePanorama('/assets/images/dach3.jpg');
 
     // Erstelle einen Panolens-Viewer
     const viewer = new PANOLENS.Viewer({
