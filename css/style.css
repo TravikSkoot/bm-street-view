@@ -17,6 +17,27 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 */
+body {
+    margin: 0;
+    font-family: 'Aller', sans-serif; /* Fallback-Schriftart für den Fall, dass Aller nicht geladen wird */
+}
+html, body {
+    height: 100%;
+}
+p {
+    font-family: aller, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 300%;
+    margin: 0;
+    color: white;
+}
+@font-face {
+    font-family: 'Aller';
+    src: url('/assets/fonts/Aller/Aller_Rg.ttf') format('truetype'); /* Pfad zur Schriftart-Datei anpassen */
+    font-weight: normal;
+    font-style: normal;
+}
 #progress {
     width: 0;
     height: 1%;
@@ -26,7 +47,59 @@
     -webkit-transition: opacity 0.5s ease;
     transition: opacity 0.5s ease-in;
 }
-
 #progress.finish {
     opacity: 0;
+}
+#loadingScreen {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 67, 106, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+}
+#loadingText {
+    margin-top: 20px;
+    top: 0;
+    left: 0;
+}
+#loadingText span {
+    opacity: 0;
+    animation: fadeInOut 1.5s infinite;
+}
+
+#loadingText span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#loadingText span:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+#loadingText span:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
+#logo {
+    width: 6%; /* Anpassen nach Bedarf */
+    height: auto;
+    position: absolute;
+    top: 40%; /* Zentriere das Logo vertikal */
+    left: 50%; /* Zentriere das Logo horizontal */
+    transform: translate(-50%, -50%);
+    animation: spin 1.75s forwards infinite; /* Animation: Name Dauer Timing-Funktion Wiederholung */
+}
+
+@keyframes spin {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
 }

@@ -23,10 +23,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>360° bm StreetView</title>
-    <style>
-        body { margin: 0; }
-        html, body { height: 100%; }
-    </style>
     <link rel="stylesheet" href="css/style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
@@ -42,7 +38,12 @@
 </head>
 <body>
 
-<div id="progress"></div>
+<div id="loadingScreen">
+    <img id="logo" src="/assets/favicon/bm_logo.jpeg" alt="Logo">
+    <div id="progress"></div>
+    <p id="loadingText">Galerie wird geladen<span>.</span><span>.</span><span>.</span></p>
+</div>
+
 
 </body>
 </html>
