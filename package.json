@@ -1,20 +1,22 @@
 {
   "name": "bm-street-view",
   "version": "1.0.0",
-  "description": "Das \"360° SchoolView Projekt\" zielt darauf ab, eine interaktive, visuelle Darstellung unserer Schule zu schaffen. Durch die Nutzung von 360°-Fotografie ermöglichen wir es Betrachtern, virtuelle Rundgänge durch verschiedene Bereiche der Schule zu erleben. Dieses Projekt kombiniert technische Innovation mit kreativem Design, um eine einzigartige und immersive Erfahrung zu bieten.",
+  "description": "An interactive, visual representation of the bm Cologne in 360°",
   "main": "index.js",
   "scripts": {
-    "test": "echo \\\"Error: no tests specified\\\" && exit 1"
+    "test": "echo \\\"Error: no tests specified\\\" && exit 1",
+    "start": "http-server ./ -o",
+    "build": "webpack --mode production"
   },
   "keywords": [
     "bm",
     "köln"
   ],
   "author": "Thiemo Küpper",
-  "license": "ISC",
+  "license": "AGPL-3.0-or-later",
   "dependencies": {
     "panolens": "^0.10.4",
-    "three": "^0.105.0"
+    "three": "^0.160.1"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/TravikSkoot/bm-street-view/issues"
   },
-  "homepage": "https://github.com/TravikSkoot/bm-street-view#readme"
+  "homepage": "https://github.com/TravikSkoot/bm-street-view#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
 }

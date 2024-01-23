@@ -1,3 +1,22 @@
+    <!--
+
+    An interactive, visual representation of the bm Cologne in 360°
+    Copyright © 2024 Thiemo Küpper
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU Affero General Public License as
+    published by the Free Software Foundation, either version 3 of the
+    License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU Affero General Public License for more details.
+
+    You should have received a copy of the GNU Affero General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+    -->
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -9,13 +28,16 @@
         html, body { height: 100%; }
     </style>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/three.min.js"></script> <!-- Version 0.105.0 -->
-    <script src="js/panolens.min.js"></script> <!-- Version 0.10.4 -->
+    <script src="js/three/three.min.js"></script> <!-- Version 0.105.0 -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"></script> --> <!-- Version0.160.1 funktioniert nicht -->
+    <script src="js/panolens/panolens.min.js"></script> <!-- Version 0.10.4 -->
     <script src="js/main.js"></script>
 </head>
 <body>
 
 <div class="panorama-container"></div>
+
+<div id="progress"></div>
 
 </body>
 </html>
