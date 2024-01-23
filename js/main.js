@@ -104,7 +104,7 @@ window.addEventListener('load', function () {
 
         // Erstelle einen Panolens-Viewer
         const viewer = new PANOLENS.Viewer({
-            container: document.body,  // Setze den Container auf den Body für Vollbild
+            container: document.querySelector("#panorama-container"),  // Setze den Container auf den Body für Vollbild
             autoHideInfospot: false,   // Infospots nicht automatisch verstecken
             autoRotate: true,          // Automatische Rotation
             autoRotateSpeed: 0.2,     // Automatische Rotationsgeschwindigkeit
@@ -167,7 +167,7 @@ window.addEventListener('load', function () {
 
         flur1_1.link(eingang3, new THREE.Vector3(3000, -2000, -250));
         flur1_1.link(flur1_2, new THREE.Vector3(3000, 1000, 500));
-        flur1_1.link(bibliothek1, new THREE.Vector3(3000, 1000, 500));
+        flur1_1.link(bibliothek1, new THREE.Vector3(0, 1000, 2000));
 
         bibliothek1.link(flur1_1, new THREE.Vector3(3000, 1000, 500));
 
