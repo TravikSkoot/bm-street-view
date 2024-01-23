@@ -27,6 +27,12 @@
   },
   "homepage": "https://github.com/TravikSkoot/bm-street-view#readme",
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "css-loader": "^6.9.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.6.0",
+    "http-server": "^14.1.1",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
   }
 }
