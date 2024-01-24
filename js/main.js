@@ -26,8 +26,6 @@ window.addEventListener('load', function () {
         '/assets/images/aula1.jpg','/assets/images/aula2.jpg','/assets/images/aula3.jpg','/assets/images/aula4.jpg','/assets/images/aula5.jpg',
         '/assets/images/eingang3.jpg','/assets/images/eingang2.jpg','/assets/images/eingang1.jpg',
         '/assets/images/1-flur1.jpg','/assets/images/1-flur2.jpg','/assets/images/1-flur3.jpg','/assets/images/1-flur4.jpg','/assets/images/1-flur5.jpg','/assets/images/1-flur6.jpg',
-        '/assets/images/2-flur1.jpg','/assets/images/2-flur2.jpg','/assets/images/2-flur3.jpg',
-        '/assets/images/treppenhaus1.jpg','/assets/images/treppenhaus2.jpg','/assets/images/treppenhaus3.jpg','/assets/images/treppenhaus4.jpg','/assets/images/treppenhaus5.jpg',
         '/assets/images/bibliothek1.jpg','/assets/images/bibliothek2.jpg','/assets/images/bibliothek3.jpg','/assets/images/bibliothek4.jpg','/assets/images/bibliothek5.jpg',
         '/assets/images/dach1.jpg','/assets/images/dach2.jpg','/assets/images/dach3.jpg',
         '/assets/images/tonstudio1.jpg','/assets/images/tonstudio2.jpg',
@@ -87,16 +85,6 @@ window.addEventListener('load', function () {
         const greenscreen= new PANOLENS.ImagePanorama('/assets/images/greenscreen.jpg');
         const tonstudio1= new PANOLENS.ImagePanorama('/assets/images/tonstudio1.jpg');
         const tonstudio2= new PANOLENS.ImagePanorama('/assets/images/tonstudio2.jpg');
-        // 2. Etage
-        const flur2_1 = new PANOLENS.ImagePanorama('/assets/images/2-flur1.jpg');
-        const flur2_2 = new PANOLENS.ImagePanorama('/assets/images/2-flur2.jpg');
-        const flur2_3 = new PANOLENS.ImagePanorama('/assets/images/2-flur3.jpg');
-        // Treppenhaus
-        const treppenhaus1 = new PANOLENS.ImagePanorama('/assets/images/treppenhaus1.jpg');
-        const treppenhaus2 = new PANOLENS.ImagePanorama('/assets/images/treppenhaus2.jpg');
-        const treppenhaus3 = new PANOLENS.ImagePanorama('/assets/images/treppenhaus3.jpg');
-        const treppenhaus4 = new PANOLENS.ImagePanorama('/assets/images/treppenhaus4.jpg');
-        const treppenhaus5 = new PANOLENS.ImagePanorama('/assets/images/treppenhaus5.jpg');
         // Dach
         const dach1 = new PANOLENS.ImagePanorama('/assets/images/dach1.jpg');
         const dach2 = new PANOLENS.ImagePanorama('/assets/images/dach2.jpg');
@@ -112,31 +100,95 @@ window.addEventListener('load', function () {
             controlBar: true         // Kontrollleiste anzeigen
         });
         // Füge die Panoramen zum Viewer hinzu
-        viewer.add(aula1,aula2,aula3,aula4,aula5,
+        viewer.add(/**/aula1,aula2,aula3,aula4,aula5,
             eingang3,eingang2,eingang1,
-            flur1_1,flur1_2,flur1_3,flur1_4,flur1_5,flur1_6,
-            flur2_1,flur2_2,flur2_3,
-            treppenhaus1,treppenhaus2,treppenhaus3,treppenhaus4,treppenhaus5,
             bibliothek1,bibliothek2,bibliothek3,bibliothek4,bibliothek5,
-            dach1,dach2,dach3,
+            flur1_1,flur1_2,flur1_3,flur1_4,flur1_5,flur1_6,
             tonstudio1,tonstudio2,
-            fachraum,computerraum,greenscreen);
+            fachraum,computerraum,greenscreen,
+            dach1,dach2,dach3);
 
         // Ausrichtung der Kamera im Panorama
         aula1.addEventListener('enter-fade-start', function(){
             viewer.tweenControlCenter( new THREE.Vector3(2500, 0, 3000), 0 );
         });
         aula2.addEventListener('enter-fade-start', function(){
-            viewer.tweenControlCenter( new THREE.Vector3(1, 0, 0), 0 );
+            viewer.tweenControlCenter( new THREE.Vector3(4000, 0, 500), 0 );
         });
         aula3.addEventListener('enter-fade-start', function(){
-            viewer.tweenControlCenter( new THREE.Vector3(0, 0, -2), 0 );
+            viewer.tweenControlCenter( new THREE.Vector3(800, 0, -3000), 0 );
         });
         aula4.addEventListener('enter-fade-start', function(){
-            viewer.tweenControlCenter( new THREE.Vector3(-2, 0, 0), 0 );
+            viewer.tweenControlCenter( new THREE.Vector3(0, 0, -3500), 0 );
         });
         aula5.addEventListener('enter-fade-start', function(){
-            viewer.tweenControlCenter( new THREE.Vector3(-3, 0, -3), 0 );
+            viewer.tweenControlCenter( new THREE.Vector3(0, -1000, 5000), 0 );
+        });
+        eingang3.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(-1000, 0, 1875), 0 );
+        });
+        eingang2.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(-150, 0, 3000), 0 );
+        });
+        eingang1.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(-3000, 0, 250), 0 );
+        });
+        bibliothek1.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(-1000, -500, -750), 0 );
+        });
+        bibliothek2.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(-2500, 0, -250), 0 );
+        });
+        bibliothek3.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(1500, -1250, 750), 0 );
+        });
+        bibliothek4.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(2000, 0, 0), 0 );
+        });
+        bibliothek5.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(1500, -1250, -1000), 0 );
+        });
+        flur1_1.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(250, -500, -2000), 0 );
+        });
+        flur1_2.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(750, -750, 2000), 0 );
+        });
+        flur1_3.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(4000, 0, 0), 0 );
+        });
+        flur1_4.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(-4000, 0, 0), 0 );
+        });
+        flur1_5.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(-3500, 0, 500), 0 );
+        });
+        flur1_6.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(-4000, 0, 1500), 0 );
+        });
+        tonstudio1.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(-2500, 0, -750), 0 );
+        });
+        tonstudio2.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(1500, 0, 0), 0 );
+        });
+        computerraum.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(-4000, 0, 1000), 0 );
+        });
+        greenscreen.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(800, 0, 1000), 0 );
+        });
+        fachraum.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(2000, 0, 1000), 0 );
+        });
+        dach1.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(-250, 0, -2250), 0 );
+        });
+        dach2.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(3000, 0, -750), 0 );
+        });
+        dach3.addEventListener('enter-fade-start', function(){
+            viewer.tweenControlCenter( new THREE.Vector3(2000, 0, 1000), 0 );
         });
 
         // Anklickbare Infospots
@@ -155,6 +207,8 @@ window.addEventListener('load', function () {
         aula5.link(aula4, new THREE.Vector3(-3500, -1000, 0));
         aula5.link(aula1, new THREE.Vector3(-1500, -1000, -6000));
         aula5.link(eingang3, new THREE.Vector3(0, -1000, 5000));
+        aula5.link(bibliothek3, new THREE.Vector3(-2000, 1500, -1000));
+        aula5.link(bibliothek5, new THREE.Vector3(-2000, 1500, 1000));
 
         eingang3.link(aula5, new THREE.Vector3(-1500, -1000, -4000));
         eingang3.link(flur1_1, new THREE.Vector3(-3000, 1000, 500));
@@ -166,20 +220,24 @@ window.addEventListener('load', function () {
         eingang1.link(eingang2, new THREE.Vector3(-3000, -1000, 250));
 
         flur1_1.link(eingang3, new THREE.Vector3(3000, -2000, -250));
-        flur1_1.link(flur1_2, new THREE.Vector3(3000, 1000, 500));
+        flur1_1.link(flur1_2, new THREE.Vector3(3000, 650, 500));
         flur1_1.link(bibliothek1, new THREE.Vector3(250, -500, -2000));
 
         bibliothek1.link(flur1_1, new THREE.Vector3(2000, -500, 0));
-        bibliothek1.link(bibliothek2, new THREE.Vector3(-2000, -500, -500));
+        bibliothek1.link(bibliothek2, new THREE.Vector3(-2000, -1000, -500));
         bibliothek1.link(bibliothek4, new THREE.Vector3(0, -1000, -1000));
 
         bibliothek4.link(bibliothek1, new THREE.Vector3(-1000, -1000, 0));
-        bibliothek4.link(bibliothek1, new THREE.Vector3(-1000, -1000, 0));
+        bibliothek4.link(bibliothek5, new THREE.Vector3(2000, -1000, -750));
 
-        bibliothek2.link(bibliothek3, new THREE.Vector3(-2000, -500, -250));
+        bibliothek5.link(bibliothek4, new THREE.Vector3(-2000, -1000, 500));
+        bibliothek5.link(aula5, new THREE.Vector3(1500, -2500, -1000));
+
+        bibliothek2.link(bibliothek3, new THREE.Vector3(-2500, -500, -250));
         bibliothek2.link(bibliothek1, new THREE.Vector3(500, -1000, -2000));
 
-        bibliothek3.link(bibliothek2, new THREE.Vector3(-2000, -500, -250));
+        bibliothek3.link(bibliothek2, new THREE.Vector3(-2500, -500, -250));
+        bibliothek3.link(aula5, new THREE.Vector3(1500, -2500, 750));
 
         flur1_2.link(flur1_1, new THREE.Vector3(-3250, -2000, 250));
         flur1_2.link(flur1_3, new THREE.Vector3(500, -1000, 4000));
@@ -220,5 +278,57 @@ window.addEventListener('load', function () {
         flur1_6.link(computerraum, new THREE.Vector3(-4000, -1000, 1500));
 
         computerraum.link(flur1_6, new THREE.Vector3(-4000, -1000, 1000));
+
+        // GUI zum Navigieren
+        const gui = new dat.GUI();
+        const settings = {
+            Panorama: 'Aula' // Standardauswahl
+        };
+
+        // Dropdown-Menü zum Wechseln der Panoramen
+        const panoramaController = gui.add(settings, 'Panorama',[
+            'Aula',
+            'Eingang',
+            'Bibliothek',
+            'Flur',
+            'Computerraum',
+            'Fachraum',
+            'Greenscreen',
+            'Tonstudio',
+            'Dach'
+        ]);
+
+        // Event-Listener für das Dropdown-Menü
+        panoramaController.onChange(function(value){
+            switch(value) {
+                case 'Aula':
+                    viewer.setPanorama(aula1);
+                    break;
+                case 'Eingang':
+                    viewer.setPanorama(eingang2);
+                    break;
+                case 'Bibliothek':
+                    viewer.setPanorama(bibliothek1);
+                    break;
+                case 'Flur':
+                    viewer.setPanorama(flur1_2);
+                    break;
+                case 'Computerraum':
+                    viewer.setPanorama(computerraum);
+                    break;
+                case 'Fachraum':
+                    viewer.setPanorama(fachraum);
+                    break;
+                case 'Greenscreen':
+                    viewer.setPanorama(greenscreen);
+                    break;
+                case 'Tonstudio':
+                    viewer.setPanorama(tonstudio1);
+                    break;
+                case 'Dach':
+                    viewer.setPanorama(dach1);
+                    break;
+            }
+        });
     }
 });

@@ -123,3 +123,6 @@ p {
     from { transform: translate(-50%, -50%) rotate(0deg); }
     to { transform: translate(-50%, -50%) rotate(360deg); }
 }
+.dg.main .close-button.close-bottom {
+    background-color: #07436a;
+}
