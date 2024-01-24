@@ -124,7 +124,7 @@ window.addEventListener('load', function () {
 
         // Ausrichtung der Kamera im Panorama
         aula1.addEventListener('enter-fade-start', function(){
-            viewer.tweenControlCenter( new THREE.Vector3(15, 0, 0), 0 );
+            viewer.tweenControlCenter( new THREE.Vector3(2500, 0, 3000), 0 );
         });
         aula2.addEventListener('enter-fade-start', function(){
             viewer.tweenControlCenter( new THREE.Vector3(1, 0, 0), 0 );
@@ -140,7 +140,7 @@ window.addEventListener('load', function () {
         });
 
         // Anklickbare Infospots
-        aula1.link(aula2, new THREE.Vector3(2500, -400, 3000), 300, "/assets/favicon/mstile-150x150.png"); // Logo als Infospot
+        aula1.link(aula2, new THREE.Vector3(2500, -400, 3000));
         aula1.link(aula5, new THREE.Vector3(5000, -400, -1500));
 
         aula2.link(aula1, new THREE.Vector3(-1750, -1000, -4000));
@@ -161,18 +161,42 @@ window.addEventListener('load', function () {
         eingang3.link(eingang2, new THREE.Vector3(1000, -1000, 3250));
 
         eingang2.link(eingang3, new THREE.Vector3(0, -1000, -3250));
-        eingang2.link(eingang1, new THREE.Vector3(0, 500, 3000));
+        eingang2.link(eingang1, new THREE.Vector3(-150, 250, 3000));
 
-        eingang1.link(eingang2, new THREE.Vector3(-6000, -500, 0));
+        eingang1.link(eingang2, new THREE.Vector3(-3000, -1000, 250));
 
         flur1_1.link(eingang3, new THREE.Vector3(3000, -2000, -250));
         flur1_1.link(flur1_2, new THREE.Vector3(3000, 1000, 500));
-        flur1_1.link(bibliothek1, new THREE.Vector3(0, 1000, 2000));
+        flur1_1.link(bibliothek1, new THREE.Vector3(250, -500, -2000));
 
-        bibliothek1.link(flur1_1, new THREE.Vector3(3000, 1000, 500));
+        bibliothek1.link(flur1_1, new THREE.Vector3(2000, -500, 0));
+        bibliothek1.link(bibliothek2, new THREE.Vector3(-2000, -500, -500));
+        bibliothek1.link(bibliothek4, new THREE.Vector3(0, -1000, -1000));
+
+        bibliothek4.link(bibliothek1, new THREE.Vector3(-1000, -1000, 0));
+        bibliothek4.link(bibliothek1, new THREE.Vector3(-1000, -1000, 0));
+
+        bibliothek2.link(bibliothek3, new THREE.Vector3(-2000, -500, -250));
+        bibliothek2.link(bibliothek1, new THREE.Vector3(500, -1000, -2000));
+
+        bibliothek3.link(bibliothek2, new THREE.Vector3(-2000, -500, -250));
 
         flur1_2.link(flur1_1, new THREE.Vector3(-3250, -2000, 250));
         flur1_2.link(flur1_3, new THREE.Vector3(500, -1000, 4000));
+        flur1_2.link(fachraum, new THREE.Vector3(-1500, -1000, -4000));
+        flur1_2.link(dach1, new THREE.Vector3(1000, -500, 0), 500, "/assets/icons/upstairs.png"); // Downstairs
+
+        dach1.link(flur1_2, new THREE.Vector3(-1400, -500, 2000), 500, "/assets/icons/downstairs.png"); // Stair Up Icon
+        dach1.link(dach2, new THREE.Vector3(-2000, -250, -2500));
+        dach1.link(dach3, new THREE.Vector3(1500, -500, -2000)); //von dach1 zu dach 3
+
+        dach2.link(dach1, new THREE.Vector3(3000, -250, 1000));
+        dach2.link(dach3, new THREE.Vector3(3000, -250, -750));
+
+        dach3.link(dach1, new THREE.Vector3(-1500, -500, -1000));
+        dach3.link(dach2, new THREE.Vector3(-1400, -500, -1500));
+
+        fachraum.link(flur1_2, new THREE.Vector3(2000, -1000, 1000));
 
         flur1_3.link(flur1_2, new THREE.Vector3(-4000, -1000, 0));
         flur1_3.link(flur1_4, new THREE.Vector3(4000, -1000, 0));
@@ -182,6 +206,15 @@ window.addEventListener('load', function () {
 
         flur1_5.link(flur1_4, new THREE.Vector3(1000, -1000, 4000));
         flur1_5.link(flur1_6, new THREE.Vector3(-3500, -2000, 500));
+        flur1_5.link(tonstudio1, new THREE.Vector3(-3500, 500, 500));
+        flur1_5.link(greenscreen, new THREE.Vector3(-250, -1000, -1000));
+
+        greenscreen.link(flur1_5, new THREE.Vector3(800, -1000, 1000));
+
+        tonstudio1.link(flur1_5, new THREE.Vector3(1000, -1000, 1000));
+        tonstudio1.link(tonstudio2, new THREE.Vector3(-2500, -250, -750));
+
+        tonstudio2.link(tonstudio1, new THREE.Vector3(1500, -250, 0));
 
         flur1_6.link(flur1_5, new THREE.Vector3(-500, 200, -4000));
         flur1_6.link(computerraum, new THREE.Vector3(-4000, -1000, 1500));
