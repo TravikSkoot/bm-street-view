@@ -105,6 +105,7 @@ p {
     left: 50%; /* Zentriere das Logo horizontal */
     transform: translate(-50%, -50%);
     animation: spin 1.75s forwards infinite; /* Animation: Name Dauer Timing-Funktion Wiederholung */
+    border-radius: 5px;
 }
 
 /* Media Query für kleinere Bildschirme (z.B. Handys) */
