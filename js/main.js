@@ -25,7 +25,7 @@ window.addEventListener('load', function () {
     let imagePaths = [ // ... Füge alle Bildpfade hinzu
         '/assets/images/aula1.jpg','/assets/images/aula2.jpg','/assets/images/aula3.jpg','/assets/images/aula4.jpg','/assets/images/aula5.jpg',
         '/assets/images/eingang3.jpg','/assets/images/eingang2.jpg','/assets/images/eingang1.jpg',
-        '/assets/images/1-flur1.jpg','/assets/images/1-flur2.jpg','/assets/images/1-flur3.jpg','/assets/images/1-flur4.jpg','/assets/images/1-flur5.jpg','/assets/images/1-flur6.jpg',
+        '/assets/images/flur1.jpg','/assets/images/flur2.jpg','/assets/images/flur3.jpg','/assets/images/flur4.jpg','/assets/images/flur5.jpg','/assets/images/flur6.jpg',
         '/assets/images/bibliothek1.jpg','/assets/images/bibliothek2.jpg','/assets/images/bibliothek3.jpg','/assets/images/bibliothek4.jpg','/assets/images/bibliothek5.jpg',
         '/assets/images/dach1.jpg','/assets/images/dach2.jpg','/assets/images/dach3.jpg',
         '/assets/images/tonstudio1.jpg','/assets/images/tonstudio2.jpg',
@@ -73,12 +73,12 @@ window.addEventListener('load', function () {
         const bibliothek4 = new PANOLENS.ImagePanorama('/assets/images/bibliothek4.jpg');
         const bibliothek5 = new PANOLENS.ImagePanorama('/assets/images/bibliothek5.jpg');
         // 1. Etage
-        const flur1_1 = new PANOLENS.ImagePanorama('/assets/images/1-flur1.jpg');
-        const flur1_2 = new PANOLENS.ImagePanorama('/assets/images/1-flur2.jpg');
-        const flur1_3 = new PANOLENS.ImagePanorama('/assets/images/1-flur3.jpg');
-        const flur1_4 = new PANOLENS.ImagePanorama('/assets/images/1-flur4.jpg');
-        const flur1_5 = new PANOLENS.ImagePanorama('/assets/images/1-flur5.jpg');
-        const flur1_6 = new PANOLENS.ImagePanorama('/assets/images/1-flur6.jpg');
+        const flur1_1 = new PANOLENS.ImagePanorama('/assets/images/flur1.jpg');
+        const flur1_2 = new PANOLENS.ImagePanorama('/assets/images/flur2.jpg');
+        const flur1_3 = new PANOLENS.ImagePanorama('/assets/images/flur3.jpg');
+        const flur1_4 = new PANOLENS.ImagePanorama('/assets/images/flur4.jpg');
+        const flur1_5 = new PANOLENS.ImagePanorama('/assets/images/flur5.jpg');
+        const flur1_6 = new PANOLENS.ImagePanorama('/assets/images/flur6.jpg');
         // Räume
         const computerraum= new PANOLENS.ImagePanorama('/assets/images/computerraum.jpg');
         const fachraum= new PANOLENS.ImagePanorama('/assets/images/fachraum.jpg');
@@ -100,7 +100,7 @@ window.addEventListener('load', function () {
             controlBar: true         // Kontrollleiste anzeigen
         });
         // Füge die Panoramen zum Viewer hinzu
-        viewer.add(/**/aula1,aula2,aula3,aula4,aula5,
+        viewer.add(aula1,aula2,aula3,aula4,aula5,
             eingang3,eingang2,eingang1,
             bibliothek1,bibliothek2,bibliothek3,bibliothek4,bibliothek5,
             flur1_1,flur1_2,flur1_3,flur1_4,flur1_5,flur1_6,
