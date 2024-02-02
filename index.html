@@ -22,32 +22,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>360° bm StreetView</title>
+    <title>bm 360° Rundgang</title>
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/assets/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="/assets/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png?v=2">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png?v=2">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png?v=2">
+    <link rel="manifest" href="/assets/favicon/site.webmanifest?v=2">
+    <link rel="mask-icon" href="/assets/favicon/safari-pinned-tab.svg?v=2" color="#07436a">
+    <link rel="shortcut icon" href="/assets/favicon/favicon.ico?v=2">
+    <meta name="msapplication-TileColor" content="#07436a">
+    <meta name="msapplication-config" content="/assets/favicon/browserconfig.xml?v=2">
+    <meta name="theme-color" content="#07436a">
     <!-- Scripts -->
     <script src="js/three/three.min.js"></script> <!-- Version 0.105.0 -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.1/three.min.js"></script> --> <!-- Version0.160.1 funktioniert nicht -->
     <script src="js/panolens/panolens.min.js"></script> <!-- Version 0.10.4 -->
     <script src="js/dat-gui/dat.gui.min.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>
 
+<p id="copyright"><a href="https://thiemomentum.de/" target="_blank"> © 2024 Thiemo Küpper</a></p>
+
 <div id="panorama-container"></div>
 
 <div id="loadingScreen">
-    <img id="logo" src="/assets/favicon/bm-360-logo.png" alt="Logo">
+    <img id="logo" src="/assets/icons/bm-360-logo.png" alt="Logo">
     <div id="progress"></div>
     <p id="loadingText">Rundgang wird geladen <span>.</span><span>.</span><span>.</span></p>
 </div>

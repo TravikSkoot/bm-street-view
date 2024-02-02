@@ -19,7 +19,7 @@
 */
 body {
     margin: 0;
-    font-family: 'Aller', sans-serif; /* Fallback-Schriftart für den Fall, dass Aller nicht geladen wird */
+    font-family: 'Aller', sans-serif;
 }
 html, body {
     height: 100%;
@@ -39,7 +39,7 @@ p {
 }
 @font-face {
     font-family: 'Aller';
-    src: url('/assets/fonts/Aller/Aller_Rg.ttf') format('truetype'); /* Pfad zur Schriftart-Datei anpassen */
+    src: url('/assets/fonts/Aller/Aller_Rg.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -48,7 +48,10 @@ p {
     height: 1%;
     position: fixed;
     top: 0;
-    background: #07436a;
+    background: linear-gradient(to right,
+    #ed1439 0%, #ed1439 33.33%,
+    #e69425 33.33%, #e69425 66.66%,
+    #56ae41 66.66%, #56ae41 100%);
     -webkit-transition: opacity 0.5s ease;
     transition: opacity 0.5s ease-in;
 }
@@ -62,12 +65,12 @@ p {
     margin: 0 auto;
     width: 100%;
     height: 100%;
-    background-color: rgba(7, 67, 106, 0.8);
+    background-color: rgba(7, 67, 106, 0.95);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    z-index: 1000;
+    z-index: 100;
 }
 #loadingText {
     margin-top: 20px;
@@ -96,34 +99,79 @@ p {
     0%, 100% { opacity: 0; }
     50% { opacity: 1; }
 }
-/* Standard-Stile für größere Bildschirme */
+
 #logo {
-    width: 10vh; /* Anpassen nach Bedarf */
+    width: 10vh;
     height: auto;
     position: absolute;
-    top: 40%; /* Zentriere das Logo vertikal */
-    left: 50%; /* Zentriere das Logo horizontal */
+    top: 35%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    animation: spin 1.75s forwards infinite; /* Animation: Name Dauer Timing-Funktion Wiederholung */
+    animation: spin 1.75s forwards infinite;
     border-radius: 5px;
 }
 
-/* Media Query für kleinere Bildschirme (z.B. Handys) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 650px) {
     #loadingText {
-        font-size: 4vh; /* Kleinere Schriftgröße für Handys */
-        /* Weitere Anpassungen... */
+        font-size: 4vh;
     }
 
     #logo {
-        width: 10vh; /* Größeres Logo für Handys */
-        /* Weitere Anpassungen... */
+        width: 10vh;
     }
 }
 @keyframes spin {
     from { transform: translate(-50%, -50%) rotate(0deg); }
     to { transform: translate(-50%, -50%) rotate(360deg); }
 }
+
 .dg.main .close-button.close-bottom {
     background-color: #07436a;
+}
+
+p#copyright {
+    color: white;
+    background-color: rgba(7, 67, 106, 0.8);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    text-align: center;
+    font-size: 1.5vh;
+    margin: 0;
+    padding: 1vh;
+    font-family: 'Aller', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    p#copyright {
+        font-size: 1.5vh;
+    }
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: white underline;
+}
+
+.dg.main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-family: "Aller", sans-serif;
+    margin-left: 5vh;
+    margin-top: 1vh;
+    scale: 150%;
+}
+
+@media (max-width: 1920px) {
+    .dg.main {
+        scale: 130%;
+    }
 }
