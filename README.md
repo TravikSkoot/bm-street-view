@@ -1,5 +1,7 @@
 # BM-Street-View
 
+<img src="assets/icons/bm-360-logo.png" height="250">
+
 ## Über das Projekt
 
 Das "360° bm StreetView Projekt" zielt darauf ab, eine interaktive, visuelle Darstellung unserer Schule zu schaffen. Durch die Nutzung von 360°-Fotografie ermöglichen wir es Betrachtern, virtuelle Rundgänge durch verschiedene Bereiche der Schule zu erleben. Dieses Projekt kombiniert technische Innovation mit kreativem Design, um eine einzigartige und immersive Erfahrung zu bieten.
