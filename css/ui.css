@@ -122,7 +122,6 @@ a:hover {
 }
 .control-button:disabled {
     background-color: #003450;
-    disabled: true;
     cursor: not-allowed;
 }
 
