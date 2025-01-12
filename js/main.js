@@ -18,7 +18,7 @@
 
     */
 
-window.addEventListener('load', function () {
+    window.addEventListener('load', function () {
 
     let progressElement = document.getElementById('progress');
 
@@ -49,7 +49,7 @@ window.addEventListener('load', function () {
         let img = new Image();
         img.onload = function() {
             loadedImages++;
-            updateProgress();
+             updateProgress();
         };
         img.src = path;
     });
@@ -97,7 +97,7 @@ window.addEventListener('load', function () {
             autoRotate: true,          // Automatische Rotation
             autoRotateSpeed: 0.2,     // Automatische Rotationsgeschwindigkeit
             cameraFov: 75,             // Sichtfeld der Kamera einstellen
-            controlBar: true         // Kontrollleiste anzeigen
+            controlBar: false         // Kontrollleiste anzeigen
         });
         // Füge die Panoramen zum Viewer hinzu
         viewer.add(aula1,aula2,aula3,aula4,aula5,
@@ -280,55 +280,116 @@ window.addEventListener('load', function () {
         computerraum.link(flur1_6, new THREE.Vector3(-4000, -1000, 1000));
 
         // GUI zum Navigieren
-        const gui = new dat.GUI();
-        const settings = {
-            Panorama: 'Aula' // Standardauswahl
-        };
+        document.getElementById('tile-aula').addEventListener('click', function() {
+            viewer.setPanorama(aula1); // Panorama für die Aula setzen
+        });
+        document.getElementById('tile-eingang').addEventListener('click', function() {
+            viewer.setPanorama(eingang3); // Panorama für die Aula setzen
+        });
+        document.getElementById('tile-bibliothek').addEventListener('click', function() {
+            viewer.setPanorama(bibliothek1); // Panorama für die Bibliothek setzen
+        });
+        document.getElementById('tile-flur').addEventListener('click', function() {
+            viewer.setPanorama(flur1_2); // Panorama für die Aula setzen
+        });
+        document.getElementById('tile-computerraum').addEventListener('click', function() {
+            viewer.setPanorama(computerraum); // Panorama für die Aula setzen
+        });
+        document.getElementById('tile-fachraum').addEventListener('click', function() {
+            viewer.setPanorama(fachraum); // Panorama für die Bibliothek setzen
+        });
+        document.getElementById('tile-greenscreen').addEventListener('click', function() {
+            viewer.setPanorama(greenscreen); // Panorama für die Bibliothek setzen
+        });
+        document.getElementById('tile-tonstudio').addEventListener('click', function() {
+            viewer.setPanorama(tonstudio1); // Panorama für die Bibliothek setzen
+        });
+        document.getElementById('tile-dach').addEventListener('click', function() {
+            viewer.setPanorama(dach1); // Panorama für die Bibliothek setzen
+        });
 
-        // Dropdown-Menü zum Wechseln der Panoramen
-        const panoramaController = gui.add(settings, 'Panorama',[
-            'Aula',
-            'Eingang',
-            'Bibliothek',
-            'Flur',
-            'Computerraum',
-            'Fachraum',
-            'Greenscreen',
-            'Tonstudio',
-            'Dach'
-        ]);
-
-        // Event-Listener für das Dropdown-Menü
-        panoramaController.onChange(function(value){
-            switch(value) {
-                case 'Aula':
-                    viewer.setPanorama(aula1);
-                    break;
-                case 'Eingang':
-                    viewer.setPanorama(eingang2);
-                    break;
-                case 'Bibliothek':
-                    viewer.setPanorama(bibliothek1);
-                    break;
-                case 'Flur':
-                    viewer.setPanorama(flur1_2);
-                    break;
-                case 'Computerraum':
-                    viewer.setPanorama(computerraum);
-                    break;
-                case 'Fachraum':
-                    viewer.setPanorama(fachraum);
-                    break;
-                case 'Greenscreen':
-                    viewer.setPanorama(greenscreen);
-                    break;
-                case 'Tonstudio':
-                    viewer.setPanorama(tonstudio1);
-                    break;
-                case 'Dach':
-                    viewer.setPanorama(dach1);
-                    break;
+        document.addEventListener('fullscreenchange', () => {
+            const topControls = document.querySelector('.top-controls');
+            if (document.fullscreenElement) {
+                topControls.style.display = 'flex';
+            } else {
+                topControls.style.display = 'flex';
             }
         });
+
+        // Optional: sicherstellen, dass beim Vollbild-Button die Steuerungen sofort sichtbar bleiben
+        const fullscreenButton = document.querySelector('.fa-expand');
+        fullscreenButton.addEventListener('click', () => {
+            const viewerContainer = document.querySelector('#panorama-container');
+            if (!document.fullscreenElement) {
+                viewerContainer.requestFullscreen().then(() => {
+                    document.querySelector('.top-controls').style.display = 'flex';
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        });
+
+        // Zoom In Button
+        document.getElementById('zoom-in-button').addEventListener('click', () => {
+            let fov = viewer.camera.fov;  // Aktuelles Sichtfeld
+            fov = Math.max(30, fov - 10);  // Begrenze den Zoom, min. Sichtfeld 30
+            viewer.camera.fov = fov;       // Neues Sichtfeld setzen
+            viewer.camera.updateProjectionMatrix();  // Projektionsmatrix aktualisieren
+        });
+
+        // Zoom Out Button
+        document.getElementById('zoom-out-button').addEventListener('click', () => {
+            let fov = viewer.camera.fov;  // Aktuelles Sichtfeld
+            fov = Math.min(120, fov + 10);  // Begrenze den Zoom, max. Sichtfeld 100
+            viewer.camera.fov = fov;       // Neues Sichtfeld setzen
+            viewer.camera.updateProjectionMatrix();  // Projektionsmatrix aktualisieren
+        });
+
+        // Bildmodus-Button und Tiles-Container
+        const bildmodusButton = document.getElementById('bildmodus-button');
+        const bottomTiles = document.querySelector('.bottom-tiles');
+
+        let tilesVisible = true;  // Startzustand
+
+        bildmodusButton.addEventListener('click', () => {
+            if (tilesVisible) {
+                bottomTiles.style.display = 'none';  // Ausblenden
+                bildmodusButton.classList.add('toggled-off');  // Ausgegraut aussehen lassen
+                bildmodusButton.title = "Bildmodus deaktiviert";
+                bildmodusButton.innerHTML = '<i class="fa-solid fa-image"></i>';
+            } else {
+                bottomTiles.style.display = 'flex';  // Einblenden
+                bildmodusButton.classList.remove('toggled-off');  // Normalen Stil wiederherstellen
+                bildmodusButton.title = "Bildmodus aktiviert";
+                bildmodusButton.innerHTML = '<i class="fa-solid fa-image"></i>';
+            }
+            tilesVisible = !tilesVisible;  // Zustand wechseln
+        });
+
+        // Infospots-Toggle-Button
+        const infospotToggleButton = document.getElementById('info-button');
+        let infospotsVisible = true;  // Startzustand: Infospots sichtbar
+
+        infospotToggleButton.addEventListener('click', () => {
+            // Schaltet alle Infospots ein/aus
+            viewer.forEach(panorama => {
+                panorama.toggleInfospotVisibility();  // Schaltet Infospots um
+            });
+
+            if (infospotsVisible) {
+                infospotToggleButton.classList.add('toggled-off');  // Stil ändern
+                infospotToggleButton.title = "Navigationspunkte deaktiviert";
+                infospotToggleButton.innerHTML = '<i class="fa-solid fa-location-dot-slash"></i> Infospots aus';
+            } else {
+                infospotToggleButton.classList.remove('toggled-off');  // Stil zurücksetzen
+                infospotToggleButton.title = "Navigationspunkte aktiviert";
+                infospotToggleButton.innerHTML = '<i class="fa-solid fa-location-dot"></i> Infospots an';
+            }
+
+            infospotsVisible = !infospotsVisible;  // Zustand wechseln
+        });
+
+
     }
 });
